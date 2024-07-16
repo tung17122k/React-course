@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "primary-gradient": `linear-gradient(
+      86.88deg,
+      #7d6aff 1.38%,
+      #ffb86c 64.33%,
+      #fc2872 119.91%
+    );`,
+      },
+    },
   },
   plugins: [],
 };
