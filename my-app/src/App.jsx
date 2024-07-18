@@ -14,8 +14,14 @@ import Card from "./component/card/card";
 import Card2 from "./component/card/card2";
 import CardTailwind from "./component/card/cardTailwind";
 import CardList from "./component/card/cardList.jsx";
+import Photos from "./component/photo/photos.jsx";
+import Counter from "./component/counter/Counter.jsx";
+import Timer from "./component/timer.jsx";
+import Header from "./component/header.jsx";
+import HackerNews from "./component/news/hackerNews.jsx";
 // import { GlobalStyle } from "./GlobalStyle.js";
 import { ThemeProvider } from "styled-components";
+
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
@@ -32,10 +38,15 @@ function App() {
       {/* <ButtonStyle>Primary</ButtonStyle> */}
       {/* <ButtonStyle secondary>Secondary</ButtonStyle> */}
       {/* <GlobalStyle></GlobalStyle> */}
-      <CardList>
-        {/* <Card2></Card2> */}
-        <CardTailwind></CardTailwind>
-      </CardList>
+      {/* <CardList> */}
+      {/* <Card2></Card2> */}
+      {/* <CardTailwind></CardTailwind> */}
+      {/* </CardList> */}
+      {/* <Photos></Photos> */}
+      {/* <Counter></Counter> */}
+      {/* <Timer></Timer> */}
+      {/* <Header></Header> */}
+      <HackerNews></HackerNews>
     </div>
   );
 }
