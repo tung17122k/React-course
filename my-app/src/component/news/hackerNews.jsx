@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import lodash from "lodash";
+// import lodash from "lodash";
 
 //https://hn.algolia.com/api/v1/search?query=react
 // function phu thuoc vao state => function thay doi thi useEffect update

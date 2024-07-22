@@ -19,6 +19,7 @@ import Counter from "./component/counter/Counter.jsx";
 import Timer from "./component/timer.jsx";
 import Header from "./component/header.jsx";
 import HackerNews from "./component/news/hackerNews.jsx";
+import HackerNewsUseReducer from "./component/news/hackerNewsUseReducer.jsx";
 // import { GlobalStyle } from "./GlobalStyle.js";
 import { ThemeProvider } from "styled-components";
 
@@ -46,7 +47,8 @@ function App() {
       {/* <Counter></Counter> */}
       {/* <Timer></Timer> */}
       {/* <Header></Header> */}
-      <HackerNews></HackerNews>
+      {/* <HackerNews></HackerNews> */}
+      <HackerNewsUseReducer></HackerNewsUseReducer>
     </div>
   );
 }
