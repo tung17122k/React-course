@@ -20,8 +20,14 @@ import Timer from "./component/timer.jsx";
 import Header from "./component/header.jsx";
 import HackerNews from "./component/news/hackerNews.jsx";
 import HackerNewsUseReducer from "./component/news/hackerNewsUseReducer.jsx";
+import Watch from "./component/watch/Watch.jsx";
+
 // import { GlobalStyle } from "./GlobalStyle.js";
 import { ThemeProvider } from "styled-components";
+import Input from "./component/watch/Input.jsx";
+import TextArea from "./component/watch/TextArea.jsx";
+import Dropdown from "./component/dropdown/Dropdown.jsx";
+import HackerNewsHooks from "./component/news/hackerNewsHooks.jsx";
 
 // const theme = {
 //   colors: {
@@ -48,7 +54,12 @@ function App() {
       {/* <Timer></Timer> */}
       {/* <Header></Header> */}
       {/* <HackerNews></HackerNews> */}
-      <HackerNewsUseReducer></HackerNewsUseReducer>
+      {/* <HackerNewsUseReducer></HackerNewsUseReducer> */}
+      {/* <Watch></Watch> */}
+      {/* <Input></Input> */}
+      {/* <TextArea></TextArea> */}
+      {/* <Dropdown></Dropdown> */}
+      <HackerNewsHooks></HackerNewsHooks>
     </div>
   );
 }
