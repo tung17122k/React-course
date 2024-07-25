@@ -24,10 +24,12 @@ import Watch from "./component/watch/Watch.jsx";
 
 // import { GlobalStyle } from "./GlobalStyle.js";
 import { ThemeProvider } from "styled-components";
-import Input from "./component/watch/Input.jsx";
+// import Input from "./component/watch/Input.jsx";
 import TextArea from "./component/watch/TextArea.jsx";
 import Dropdown from "./component/dropdown/Dropdown.jsx";
 import HackerNewsHooks from "./component/news/hackerNewsHooks.jsx";
+import Form from "./component/form/Form.jsx";
+import MovieSearchApp from "./component/MovieSearchApp.jsx";
 
 // const theme = {
 //   colors: {
@@ -59,7 +61,9 @@ function App() {
       {/* <Input></Input> */}
       {/* <TextArea></TextArea> */}
       {/* <Dropdown></Dropdown> */}
-      <HackerNewsHooks></HackerNewsHooks>
+      {/* <HackerNewsHooks></HackerNewsHooks> */}
+      {/* <Form></Form> */}
+      <MovieSearchApp></MovieSearchApp>
     </div>
   );
 }
