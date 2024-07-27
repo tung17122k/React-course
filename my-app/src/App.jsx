@@ -29,6 +29,7 @@ import TextArea from "./component/watch/TextArea.jsx";
 import Dropdown from "./component/dropdown/Dropdown.jsx";
 import HackerNewsHooks from "./component/news/hackerNewsHooks.jsx";
 import Form from "./component/form/Form.jsx";
+import SignupForm from "./component/form/SignupForm.jsx";
 import MovieSearchApp from "./component/MovieSearchApp.jsx";
 
 // const theme = {
@@ -63,7 +64,8 @@ function App() {
       {/* <Dropdown></Dropdown> */}
       {/* <HackerNewsHooks></HackerNewsHooks> */}
       {/* <Form></Form> */}
-      <MovieSearchApp></MovieSearchApp>
+      {/* <MovieSearchApp></MovieSearchApp> */}
+      <SignupForm></SignupForm>
     </div>
   );
 }
