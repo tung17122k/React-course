@@ -34,6 +34,7 @@ import SignupFormV2 from "./component/form/SignupFormV2.jsx";
 import SignupFormFinal from "./component/form/SignupFormFinal.jsx";
 import SignupFormHook from "./component/form/SignupFormHook.jsx";
 import MovieSearchApp from "./component/MovieSearchApp.jsx";
+import RegisterHook from "./component/register-form/RegisterHook.jsx";
 
 // const theme = {
 //   colors: {
@@ -71,7 +72,8 @@ function App() {
       {/* <SignupForm></SignupForm> */}
       {/* <SignupFormV2></SignupFormV2> */}
       {/* <SignupFormFinal></SignupFormFinal> */}
-      <SignupFormHook></SignupFormHook>
+      {/* <SignupFormHook></SignupFormHook> */}
+      <RegisterHook></RegisterHook>
     </div>
   );
 }

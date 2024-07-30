@@ -7,8 +7,13 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+Create proj: - npm vite ... - proj name: . (thư mục hiện tại) - package name: react - .... - select frame work: react - select variant: react
+
+- install tailwind css, styled-component , formik, react hook form, axios, Yup
+  - Yup: npm install @hookform/resolvers yup (react hook form)
+  - formik: npm install yup --save
 - Form
   - https://formik.org/docs/tutorial: use Formik
   - React Hook Form: https://react-hook-form.com/docs/usecontroller : use React Hook Form
-  - Yup: https://www.npmjs.com/package/yup => validate
+  - Yup: https://www.npmjs.com/package/yup => validation
     => formik re-render nhiều hơn react hook form

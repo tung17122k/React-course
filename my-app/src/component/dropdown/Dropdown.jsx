@@ -19,13 +19,15 @@ const Dropdown = () => {
       title: "VueJS",
     },
   ];
+  console.log(domRef);
 
   return (
     <div className={`p-5`}>
-      <div className="relative w-full max-w-[400px]" ref={domRef}>
+      <div className="relative w-full max-w-[400px]">
         <div
           className="p-5 border border-gray-400 rounded-lg w-full cursor-pointer"
           onClick={() => setShow(!show)}
+          ref={domRef}
         >
           {select}
         </div>
