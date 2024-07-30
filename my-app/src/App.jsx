@@ -30,6 +30,9 @@ import Dropdown from "./component/dropdown/Dropdown.jsx";
 import HackerNewsHooks from "./component/news/hackerNewsHooks.jsx";
 import Form from "./component/form/Form.jsx";
 import SignupForm from "./component/form/SignupForm.jsx";
+import SignupFormV2 from "./component/form/SignupFormV2.jsx";
+import SignupFormFinal from "./component/form/SignupFormFinal.jsx";
+import SignupFormHook from "./component/form/SignupFormHook.jsx";
 import MovieSearchApp from "./component/MovieSearchApp.jsx";
 
 // const theme = {
@@ -65,7 +68,10 @@ function App() {
       {/* <HackerNewsHooks></HackerNewsHooks> */}
       {/* <Form></Form> */}
       {/* <MovieSearchApp></MovieSearchApp> */}
-      <SignupForm></SignupForm>
+      {/* <SignupForm></SignupForm> */}
+      {/* <SignupFormV2></SignupFormV2> */}
+      {/* <SignupFormFinal></SignupFormFinal> */}
+      <SignupFormHook></SignupFormHook>
     </div>
   );
 }

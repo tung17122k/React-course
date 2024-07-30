@@ -6,3 +6,9 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+- Form
+  - https://formik.org/docs/tutorial: use Formik
+  - React Hook Form: https://react-hook-form.com/docs/usecontroller : use React Hook Form
+  - Yup: https://www.npmjs.com/package/yup => validate
+    => formik re-render nhiều hơn react hook form
