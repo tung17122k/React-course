@@ -1,13 +1,8 @@
 import React from "react";
-import { useController } from "react-hook-form";
+import { useField, Form, Formik } from "formik";
 
-const CheckboxHook = ({ control, text, ...props }) => {
-  const { field } = useController({
-    control,
-    name: props.name,
-    defaultValue: false,
-  });
-  // console.log({ field });
+const CheckboxFormik = ({ text, ...props }) => {
+  const [field, meta] = useField(props);
   return (
     <label className="w-5 h-5 cursor-pointer custom-checkbox">
       <input
@@ -17,7 +12,8 @@ const CheckboxHook = ({ control, text, ...props }) => {
         className="hidden"
         id={props.name}
         value={props.value}
-        defaultChecked={field.value}
+        checked={field.value}
+        // checked={field.value}
       />
       <div className="flex items-center gap-x-3 mt-5 ">
         <div className=" bg-white rounded-md w-full h-full custom-checkbox-square flex items-center justify-center">
@@ -38,8 +34,11 @@ const CheckboxHook = ({ control, text, ...props }) => {
           {text}
         </label>
       </div>
+      {meta.touched && meta.error ? (
+        <p className="text-red-500 text-sm">{meta.error}</p>
+      ) : null}
     </label>
   );
 };
 
-export default CheckboxHook;
+export default CheckboxFormik;

@@ -1,19 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useWatch } from "react-hook-form";
 import UseClickOutSide from "../../../../src/component/register-form/hook/useClickOutSide.jsx";
 
-// sử dụng useWatch để cho nó 1 register có name = job , sử dụng setvalue và custom attribute để setValue("userName", "Tung") => setValue("job", "FE || BE || PM")
-const DropdownHook = ({ control, setValue, name, ...props }) => {
+const data = [
+  {
+    id: 1,
+    value: "FE",
+    text: "Front-end developer",
+  },
+  {
+    id: 2,
+    value: "BE",
+    text: "Back-end developer",
+  },
+  {
+    id: 3,
+    value: "PM",
+    text: "Project manager",
+  },
+];
+
+// sử dụng useWatch để cho nó 1 register có name = job , sử dụng setvalue, useWatch và custom attribute: useWatch => name: 'Job', setValue(name, data - custom- attribute) => register => job: 'data - custom- attribute'
+const DropdownHook = ({
+  control,
+  setValue,
+  name,
+  dropdownLabel = "Select your job",
+  ...props
+}) => {
   const { show, setShow, nodeRef } = UseClickOutSide();
-  useWatch({
+  const dropdownValue = useWatch({
     control,
     name: "job",
     defaultValue: "", // default value before the render
   });
-  const [label, setLabel] = useState("Select your job");
+  // console.log(dropdownValue); '' => value
+  const [label, setLabel] = useState(dropdownLabel);
+  useEffect(() => {
+    if (dropdownValue === "") setLabel(dropdownLabel);
+  }, [dropdownValue]);
   const handleClickDropdownItem = (e) => {
     setValue(name, e.target.dataset.value);
-    setLabel(e.target.dataset.value);
+    setLabel(e.target.textContent);
     setShow(false);
   };
   // console.log(jobValue);
@@ -28,7 +56,17 @@ const DropdownHook = ({ control, setValue, name, ...props }) => {
       <div
         className={`absolute top-full left-0 w-full rounded-lg bg-white ${show ? "" : "opacity-0 invisible"}`}
       >
-        <div>
+        {data.map((item) => (
+          <div
+            className="p-5 cursor-pointer hover:bg-gray-100"
+            onClick={handleClickDropdownItem}
+            data-value={item.value}
+            key={item.id}
+          >
+            {item.text}
+          </div>
+        ))}
+        {/* <div>
           <div
             className="p-5 cursor-pointer hover:bg-gray-100"
             onClick={handleClickDropdownItem}
@@ -50,7 +88,7 @@ const DropdownHook = ({ control, setValue, name, ...props }) => {
           >
             PM
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

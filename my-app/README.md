@@ -17,3 +17,7 @@ Create proj: - npm vite ... - proj name: . (thư mục hiện tại) - package n
   - React Hook Form: https://react-hook-form.com/docs/usecontroller : use React Hook Form
   - Yup: https://www.npmjs.com/package/yup => validation
     => formik re-render nhiều hơn react hook form
+
+=> tổng quan về form register: - React Hook Form: useController, useWatch => field: {name : ... , value: ..., f()....}
+--------------------------------------------------control, submitHandle => value : {field.name: value, ........}
+=> FORM TOÀN TẬP : XÂY DỰNG GIAO DIỆN => SỬ DỤNG useForm => VIẾT VALIDATION ( SỬ DỤNG YUP) => TRUYỀN VÀO useForm để gọi validate
