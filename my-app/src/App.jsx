@@ -52,6 +52,11 @@ import { AuthProvider, useAuth } from "./context/auContext.jsx";
 import { GalleryProvider } from "./context/galleryContext.jsx";
 import PhotosList from "./component/gallery/PhotosList.jsx";
 import CartList from "./component/gallery/CartList.jsx";
+import { Route, Routes } from "react-router-dom";
+import Nav from "./component/Nav.jsx";
+import BlogPage from "./component/BlogPage.jsx";
+import ProfilePage from "./component/ProfilePage.jsx";
+import BlogPageDetails from "./component/BlogPageDetail.jsx";
 
 // const theme = {
 //   colors: {
@@ -207,7 +212,8 @@ function App() {
           <Counter></Counter>
         </CountProvider>
       </div> */}
-      <Fragment>
+
+      {/* <Fragment>
         <AuthProvider>
           <GalleryProvider>
             <HeaderMain></HeaderMain>
@@ -215,7 +221,47 @@ function App() {
             <CartList></CartList>
           </GalleryProvider>
         </AuthProvider>
-      </Fragment>
+      </Fragment> */}
+
+      {/* <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              magni tempore autem maiores sed. Ipsam officiis fugit omnis quae
+              hic animi eveniet quas quis possimus, placeat eos voluptatum
+              doloribus cum!
+            </div>
+          }
+        ></Route>
+        <Route path="/about" element={<div>This is about page</div>}></Route>
+        <Route
+          path="/movie/:movieId"
+          element={
+            <AuthProvider>
+              <GalleryProvider>
+                <HeaderMain></HeaderMain>
+                <PhotosList></PhotosList>
+                <CartList></CartList>
+              </GalleryProvider>
+            </AuthProvider>
+          }
+        ></Route>
+      </Routes> */}
+
+      {/* <Routes>
+        <Route path="/" element={<Nav></Nav>}>
+          <Route path="/" element={<>Home Page</>}></Route>
+          <Route path="/blog" element={<BlogPage></BlogPage>}></Route>
+          <Route
+            path="/blog/:slug"
+            element={<BlogPageDetails></BlogPageDetails>}
+          ></Route>
+          <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
+        </Route>
+        <Route path="*" element={<>This is 404 Page</>}></Route>
+      </Routes> */}
     </div>
   );
 }
