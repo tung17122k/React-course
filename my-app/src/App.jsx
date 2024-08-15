@@ -57,7 +57,15 @@ import Nav from "./component/Nav.jsx";
 import BlogPage from "./component/BlogPage.jsx";
 import ProfilePage from "./component/ProfilePage.jsx";
 import BlogPageDetails from "./component/BlogPageDetail.jsx";
-
+import FetchingData from "./component/Advance/FetchingData.jsx";
+import Title from "./component/Advance/render-props/Title.jsx";
+import HandleValues from "./component/Advance/render-props/HandleValues.jsx";
+import Input from "./component/Advance/render-props/HandleValues.jsx";
+import Accordion from "./component/Advance/react-composition/Accordion.jsx";
+import Editable from "./component/Advance/react-composition/Editable.jsx";
+// import Counter from "./component/Advance/control-prop/counter.jsx";
+import Counter from "./component/Advance/state-reducer/counter.jsx";
+import useCounter from "./component/Advance/state-reducer/useCounter.jsx";
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
@@ -69,23 +77,43 @@ function CountDisplay() {
   return <div>The count is : {count}</div>;
 }
 
-function Counter() {
-  const [, setCount] = useCount();
-  const increment = () => setCount((c) => c + 1);
-  return (
-    <button
-      onClick={increment}
-      className="p-4 font-semibold text-white bg-blue-500 rounded-lg"
-    >
-      Increment
-    </button>
-  );
-}
+// function Counter() {
+//   const [, setCount] = useCount();
+//   const increment = () => setCount((c) => c + 1);
+//   return (
+//     <button
+//       onClick={increment}
+//       className="p-4 font-semibold text-white bg-blue-500 rounded-lg"
+//     >
+//       Increment
+//     </button>
+//   );
+// }
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [openModalBase, setOpenModalBase] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  // const [count, setCount] = useState(5);
+  // const handleCountChange = (newCount) => {
+  //   setCount(newCount);
+  // };
+  const userReducer = (state, action) => {
+    switch (action.type) {
+      case "DECREMENT":
+        return {
+          count: state.count - 5,
+        };
+      default:
+        return useCounter.reducer(state, action);
+    }
+  };
+  const { count, handleDecrement, handleIncrement } = useCounter(
+    {
+      initial: 0,
+    },
+    userReducer
+  );
   return (
     <div>
       {/* <ThemeProvider theme={theme}></ThemeProvider> */}
@@ -212,7 +240,6 @@ function App() {
           <Counter></Counter>
         </CountProvider>
       </div> */}
-
       {/* <Fragment>
         <AuthProvider>
           <GalleryProvider>
@@ -222,7 +249,6 @@ function App() {
           </GalleryProvider>
         </AuthProvider>
       </Fragment> */}
-
       {/* <Routes>
         <Route
           path="/"
@@ -248,9 +274,9 @@ function App() {
             </AuthProvider>
           }
         ></Route>
-      </Routes> */}
+      </Routes>
 
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Nav></Nav>}>
           <Route path="/" element={<>Home Page</>}></Route>
           <Route path="/blog" element={<BlogPage></BlogPage>}></Route>
@@ -262,6 +288,30 @@ function App() {
         </Route>
         <Route path="*" element={<>This is 404 Page</>}></Route>
       </Routes> */}
+      {/* React advance */}
+      {/* <FetchingData></FetchingData> */}
+      {/* <Title>{() => <h1>demo</h1>}</Title> */}
+      {/* <HandleValues></HandleValues> */}
+
+      {/* <div className="p-10 w-full max-w-[600px] mx-auto"> */}
+      {/* <Accordion header="Header .....................">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          porro molestiae qui consequatur reprehenderit incidunt officia vero,
+          ab, enim provident, possimus eaque sunt facere! Eius incidunt earum
+          sint magnam doloremque?
+        </Accordion> */}
+      {/* <Editable></Editable> */}
+      {/* </div> */}
+
+      <div>
+        {/* <Counter value={count} onChange={handleCountChange}></Counter> */}
+
+        <Counter
+          count={count}
+          handleDecrement={handleDecrement}
+          handleIncrement={handleIncrement}
+        ></Counter>
+      </div>
     </div>
   );
 }
